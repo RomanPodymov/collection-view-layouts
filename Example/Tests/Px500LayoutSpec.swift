@@ -77,8 +77,9 @@ class Px500LayoutSpec: QuickSpec {
                             return result + items.count
                         }))
 
+                        let cellsSpaceHeight = layout.cellsPadding.vertical * (rowsCount - 1)
                         let height = layout.contentPadding.vertical * 2 + cellHeight * rowsCount
-                            + layout.cellsPadding.vertical * (rowsCount - 1)
+                            + cellsSpaceHeight
 
                         expect(layout.contentSize.width) == frame.size.width
                         expect(layout.contentSize.height).to(beCloseTo(height))
